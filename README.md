@@ -1,5 +1,7 @@
 # Priorities
 
+<!-- *A simpler way to find focus and prioritize your day.* -->
+
 ### Priorities Client
 
 <!-- #### Summary -->
@@ -8,4 +10,4 @@
 
 #### Technologies Implemented
 
-- [React](https://reactjs.org/), JavaScript library for constructing user interfacing using developer friendly declarative component-based applications.
+- [React](https://reactjs.org/): JavaScript library for constructing user interfacing using developer friendly declarative component-based applications.
