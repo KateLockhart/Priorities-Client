@@ -1,5 +1,9 @@
 import "./App.css";
 import { useState, useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
+
+import { HomeView } from "./views/HomeView";
+import { MatrixView } from "./views/MatrixView";
 
 function App() {
   const [result, setResult] = useState([]);
@@ -19,6 +23,11 @@ function App() {
 
   return (
     <div className="App">
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/" element={<MatrixView />} />
+      </Routes>
+
       <button onClick={fetchData}>Press the Button to Fetch</button>
     </div>
   );
