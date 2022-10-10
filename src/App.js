@@ -2,9 +2,10 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-import { HomeView } from "./views/HomeView";
-import { MatrixView } from "./views/MatrixView";
+import { HomeView } from "./views/Home";
+import { MatrixView } from "./views/Matrix";
 
+// TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
 function App() {
   const [result, setResult] = useState([]);
 

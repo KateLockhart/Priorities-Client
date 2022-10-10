@@ -1,7 +1,7 @@
 export const About = () => {
     return (
         <div>
-            <h2>About Priorities section/details</h2>
+            <h2>Future Org about page.</h2>
         </div>
     )
 }
