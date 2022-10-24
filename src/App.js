@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <AppBar position="static">
+        <nav>
           <Toolbar>
             <Stack direction="row" spacing={3}>
               <Link to="/">
@@ -42,7 +42,7 @@ function App() {
               </Link>
             </Stack>
           </Toolbar>
-        </AppBar>
+        </nav>
 
         <Routes>
           <Route path="" element={<Home />}></Route>
