@@ -6,6 +6,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
+// TODO: add tooltips for buttons
 export const CreateCategory = () => {
   return (
     <div>
