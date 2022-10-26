@@ -7,8 +7,7 @@ import TextField from "@mui/material/TextField";
 import Checkbox from "@mui/material/Checkbox";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
-
-// TODO: Add submit button
+import Button from "@mui/material/Button";
 
 export const SignUp = () => {
   // TODO: Conditionally render login vs Sign Up forms
@@ -70,6 +69,9 @@ export const SignUp = () => {
             label="Phone Number"
             variant="outlined"
           />
+          <Button variant="outlined" color="success">
+            Sign Up
+          </Button>
         </FormControl>
       </Box>
     </div>

@@ -28,6 +28,9 @@ export const CreateCategory = () => {
           />
           <FormControlLabel>Color for Category</FormControlLabel>
           <input type="color" name="color" />
+          <Button variant="outlined" color="success">
+            Add Category
+          </Button>
         </FormControl>
       </Box>
     </div>

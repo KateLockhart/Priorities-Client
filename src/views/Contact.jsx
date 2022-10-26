@@ -15,9 +15,9 @@ export const Contact = () => {
     <div>
       <h2>Future Org View contact page.</h2>
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
-        <Grid container spacing={4}>
+        <Grid container>
           <Grid item xs={10} sm={8} md={8}>
-            <Paper>
+            <Paper elevation="6">
               <List>
                 <ListItem alignItems="flex-start">
                   <ListItemAvatar>
@@ -34,19 +34,13 @@ export const Contact = () => {
                   <ListItemAvatar>
                     <Avatar>{/* Icon */}</Avatar>
                   </ListItemAvatar>
-                  <ListItemText
-                    primary="Instagram"
-                    secondary="placeholderEmail@email.com"
-                  />
+                  <ListItemText primary="Instagram" secondary="@Priorities" />
                 </ListItem>
                 <ListItem alignItems="flex-start">
                   <ListItemAvatar>
                     <Avatar>{/* Icon */}</Avatar>
                   </ListItemAvatar>
-                  <ListItemText
-                    primary="Email"
-                    secondary="placeholderEmail@email.com"
-                  />
+                  <ListItemText primary="LinkedIn?" secondary="Url/link" />
                 </ListItem>
               </List>
             </Paper>
