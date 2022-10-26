@@ -12,6 +12,8 @@ import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import Button from "@mui/material/Button";
 
+// TODO: Add tooltips for buttons where necessary.
+
 export const CreatePriority = () => {
   return (
     <div>

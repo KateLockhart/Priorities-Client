@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "@mui/material/Button";
 // Grid imports
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -14,7 +15,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 
-//  TODO: Add "Add Priority" button and link to form page
+//  TODO: Add  link to "Add Priority" form page
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -62,7 +63,11 @@ export const Matrix = () => {
   return (
     <div style={{ height: "67.25vh" }}>
       <h1>Your Priority Matrix</h1>
+
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
+        <Button variant="outlined" color="success">
+          Create a New Priority
+        </Button>
         <Grid container spacing={4}>
           <Grid
             item
