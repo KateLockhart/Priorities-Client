@@ -8,12 +8,11 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 
-// TODO: Turn icons and list items into links that open in new tab
+// TODO: Turn icons and list items into links that open in new tab, create page title/label
 
 export const Contact = () => {
   return (
     <div>
-      <h2>Future Org View contact page.</h2>
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
         <Grid container>
           <Grid item xs={10} sm={8} md={8}>
