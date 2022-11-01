@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 // Grid imports
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
@@ -15,7 +16,7 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 
-//  TODO: Add  link to "Add Priority" form page
+//  TODO: Add  link to "Add Priority" form page, test styling dividers with nested typography tag of h3/h4 variant
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -62,7 +63,7 @@ export const Matrix = () => {
 
   return (
     <div style={{ height: "67.25vh" }}>
-      <h1>Your Priority Matrix</h1>
+      <Typography variant="h1">Your Priority Matrix</Typography>
 
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
         <Button variant="outlined" color="success">

@@ -5,12 +5,13 @@ import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-// TODO: add tooltips for buttons
+// TODO: add tooltips for buttons; stretch: add a benefit blurb about category organization(also mention on home page demo)
 export const CreateCategory = () => {
   return (
     <div>
-      <h2>Add a Category</h2>
+      <Typography variant="h2">Add a Category</Typography>
       <Box
         component="form"
         sx={{

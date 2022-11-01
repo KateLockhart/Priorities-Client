@@ -2,6 +2,7 @@ import "../App.css";
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
 export const Home = () => {
   return (
@@ -87,8 +88,8 @@ export const Home = () => {
               />
             </Grid>
             <Grid item xs={6}>
-              <h3>Title text for section</h3>
-              <p>
+              <Typography variant="h3">Sample Title for Section</Typography>
+              <Typography variant="body1" gutterBottom>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
                 ultrices augue auctor, maximus diam a, aliquet ex. Mauris
                 eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
@@ -97,7 +98,7 @@ export const Home = () => {
                 venenatis, velit libero mollis urna, vel condimentum justo velit
                 vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
                 vitae tellus sodales porttitor tempor quis elit.
-              </p>
+              </Typography>
             </Grid>
           </Box>
         </Paper>
@@ -117,8 +118,8 @@ export const Home = () => {
             }}
           >
             <Grid item xs={6}>
-              <h3>Title text for section</h3>
-              <p>
+              <Typography variant="h3">Sample Title for Section</Typography>
+              <Typography variant="body1" gutterBottom>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
                 ultrices augue auctor, maximus diam a, aliquet ex. Mauris
                 eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
@@ -127,7 +128,7 @@ export const Home = () => {
                 venenatis, velit libero mollis urna, vel condimentum justo velit
                 vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
                 vitae tellus sodales porttitor tempor quis elit.
-              </p>
+              </Typography>
             </Grid>
             <Grid item xs={4}>
               <img
@@ -161,8 +162,8 @@ export const Home = () => {
               />
             </Grid>
             <Grid item xs={6}>
-              <h3>Title text for section</h3>
-              <p>
+              <Typography variant="h3">Sample Title for Section</Typography>
+              <Typography variant="body1" gutterBottom>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
                 ultrices augue auctor, maximus diam a, aliquet ex. Mauris
                 eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
@@ -171,7 +172,7 @@ export const Home = () => {
                 venenatis, velit libero mollis urna, vel condimentum justo velit
                 vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
                 vitae tellus sodales porttitor tempor quis elit.
-              </p>
+              </Typography>
             </Grid>
           </Box>
         </Paper>

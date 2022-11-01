@@ -2,12 +2,13 @@ import Box from "@mui/material/Box";
 import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export const Login = () => {
   // TODO: Implement full Login form build and functionality
   return (
     <div>
-      <h1>Login</h1>
+      <Typography variant="h1">Login</Typography>
       <Box
         component="form"
         sx={{

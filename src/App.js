@@ -9,6 +9,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 // TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
+// TODO: Test look of links vs buttons in both footer and nav.
 function App() {
   const [result, setResult] = useState([]);
 
