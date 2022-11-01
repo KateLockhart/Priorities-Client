@@ -10,13 +10,14 @@ import Checkbox from "@mui/material/Checkbox";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 export const SignUp = () => {
-  // TODO: Conditionally render login vs Sign Up forms
+  // TODO: Conditionally render login vs Sign Up forms, add image and grid 1x2
   return (
     <div id="signUpPage">
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
-        <h1>Sign Up</h1>
+        <Typography variant="h1">Sign Up</Typography>
         <Grid container>
           <Grid item xs={2} sm={3} md={3}>
             <Paper elevation="6">

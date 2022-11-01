@@ -1,8 +1,9 @@
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+import Typography from "@mui/material/Typography";
 
-//  TODO: Add privacy content and create both a summary and in depth section
+//  TODO: Add privacy content and create both a summary and in depth section, add images for scroll flow
 
 export const Privacy = () => {
   return (

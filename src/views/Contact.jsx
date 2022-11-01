@@ -7,13 +7,15 @@ import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
+import Typography from "@mui/material/Typography";
 
-// TODO: Turn icons and list items into links that open in new tab, create page title/label
+// TODO: Turn icons and list items into links that open in new tab, add image to half of grid, create page title/label
 
 export const Contact = () => {
   return (
     <div>
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
+        <Typography variant="h2">Contact Priorities</Typography>
         <Grid container>
           <Grid item xs={10} sm={8} md={8}>
             <Paper elevation="6">

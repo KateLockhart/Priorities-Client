@@ -12,12 +12,12 @@ import CircleIcon from "@mui/icons-material/Circle";
 import CircleOutlinedIcon from "@mui/icons-material/CircleOutlined";
 import Button from "@mui/material/Button";
 
-// TODO: Add tooltips for buttons where necessary.
+// TODO: Add tooltips for buttons where necessary. Fix text legends.
 
 export const CreatePriority = () => {
   return (
     <div>
-      <h2>Add a Priority</h2>
+      <Typography variant="h2">Add a Priority</Typography>
       <Box
         component="form"
         sx={{

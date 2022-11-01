@@ -7,13 +7,14 @@ import InputLabel from "@mui/material/InputLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
-// TODO: add tooltips for buttons
+// TODO: add tooltips for buttons; stretch: add a benefit blurb about category organization(also mention on home page demo)
 export const CreateCategory = () => {
   return (
     <div>
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
-        <h2>Add a Category</h2>
+        <Typography variant="h2">Add a Category</Typography>
         <Grid container>
           <Grid item xs={10} sm={5} md={5}>
             <Paper elevation="6">

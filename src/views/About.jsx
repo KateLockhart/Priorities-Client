@@ -9,11 +9,15 @@ import Avatar from "@mui/material/Avatar";
 import Diversity1RoundedIcon from "@mui/icons-material/Diversity1Rounded";
 import Diversity2RoundedIcon from "@mui/icons-material/Diversity2Rounded";
 import Diversity3RoundedIcon from "@mui/icons-material/Diversity3Rounded";
+import Typography from "@mui/material/Typography";
+
+// TODO: Add Box and Grid to page separating core values on one half and origin story on the other, add in images; 1x2 page or 2x2.
 
 export const About = () => {
   return (
     <div>
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
+        <Typography variant="h2">About Priorities</Typography>
         <Grid container>
           <Grid item xs={10} sm={5} md={5}>
             <Paper elevation="6">
