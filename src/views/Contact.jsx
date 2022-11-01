@@ -9,7 +9,7 @@ import Avatar from "@mui/material/Avatar";
 import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 import Typography from "@mui/material/Typography";
 
-// TODO: Turn icons and list items into links that open in new tab, add image to half of grid
+// TODO: Turn icons and list items into links that open in new tab, add image to half of grid, create page title/label
 
 export const Contact = () => {
   return (
