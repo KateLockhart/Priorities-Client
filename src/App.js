@@ -1,50 +1,223 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link as RouterLink,
+} from "react-router-dom";
 import { Home, Matrix, Login, SignUp, About, Contact, Privacy } from "./views";
 
 import AppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container";
 import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 // TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
 // TODO: Test look of links vs buttons in both footer and nav.
 // TODO: Convert nav to MUI AppBar and style accordingly
-function App() {
-  const [result, setResult] = useState([]);
+// Stretch Goal: add 'Productivity Tips' view to authViews and create page of resources
+const authViews = ["My Priority Matrix"];
+const authMenu = ["Account", "Logout"];
 
-  const fetchData = async () => {
-    const res = await fetch("", {
-      method: "",
-      // headers: {
-      //   "Content-Type": "application/json",
-      // },
-      // body: JSON.stringify(),
-    });
-    const data = await res.json();
-    console.log(data);
-    setResult(data);
+function App() {
+  const [anchorElNav, setAnchorElNav] = useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
+  // const [result, setResult] = useState([]);
+
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
   };
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
+  };
+
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
+  };
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null);
+  };
+  // const fetchData = async () => {
+  //   const res = await fetch("", {
+  //     method: "",
+  //     // headers: {
+  //     //   "Content-Type": "application/json",
+  //     // },
+  //     // body: JSON.stringify(),
+  //   });
+  //   const data = await res.json();
+  //   console.log(data);
+  //   setResult(data);
+  // };
 
   return (
     <Router>
       <div className="App">
-        <nav>
-          <Toolbar>
-            <Stack direction="row" spacing={3}>
-              <Link to="/">
-                <Button variant="contained">Home</Button>
-              </Link>
-              <Link to="/matrix">
-                <Button variant="contained">My Priorities</Button>
-              </Link>
-              <Link to="/login">
-                <Button variant="contained">Login</Button>
-              </Link>
-            </Stack>
-          </Toolbar>
-        </nav>
+        <AppBar position="static">
+          <Container maxWidth="xl">
+            <Toolbar disableGutters>
+              <Typography
+                variant="h6"
+                noWrap
+                component="a"
+                href="/"
+                sx={{
+                  mr: 4,
+                  display: { xs: "none", md: "flex" },
+                  fontFamily: "Noto Sans",
+                  fontWeight: 700,
+                  letterSpacing: ".2rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                Priorities
+              </Typography>
+              <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="inherit"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  <MenuItem
+                    component={RouterLink}
+                    to="/login"
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">Login</Typography>
+                  </MenuItem>
+                  <MenuItem
+                    component={RouterLink}
+                    to="/signUp"
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">Sign Up</Typography>
+                  </MenuItem>
+                </Menu>
+              </Box>
+              <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+              <Typography
+                variant="h5"
+                noWrap
+                component="a"
+                href=""
+                sx={{
+                  mr: 2,
+                  display: { xs: "flex", md: "none" },
+                  flexGrow: 1,
+                  fontFamily: "Noto sans",
+                  fontWeight: 700,
+                  letterSpacing: ".3rem",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                Priorities
+              </Typography>
+              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+                <Button
+                  component={RouterLink}
+                  to="/login"
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                  }}
+                >
+                  Login
+                </Button>
+                <Button
+                  component={RouterLink}
+                  to="/signUp"
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </Box>
+              <Box sx={{ flexGrow: 0 }}>
+                <Tooltip title="Open settings">
+                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <Avatar alt="" src="" />
+                  </IconButton>
+                </Tooltip>
+                <Menu
+                  sx={{ mt: "45px" }}
+                  id="menu-appbar"
+                  anchorEl={anchorElUser}
+                  anchorOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "right",
+                  }}
+                  open={Boolean(anchorElUser)}
+                  onClose={handleCloseUserMenu}
+                >
+                  <MenuItem
+                    component={RouterLink}
+                    to="/"
+                    onClick={handleCloseUserMenu}
+                  >
+                    <Typography textAlign="center">Account</Typography>
+                  </MenuItem>
+                  <MenuItem
+                    component={RouterLink}
+                    to="/"
+                    onClick={handleCloseUserMenu}
+                  >
+                    <Typography textAlign="center">Logout</Typography>
+                  </MenuItem>
+                </Menu>
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
 
         <Routes>
           <Route path="" element={<Home />}></Route>
@@ -56,28 +229,65 @@ function App() {
           <Route path="privacyPolicy" element={<Privacy />}></Route>
         </Routes>
 
-        <button onClick={fetchData}>Press the Button to Fetch</button>
+        {/* <button onClick={fetchData}>Press the Button to Fetch</button> */}
 
         <footer>
-          <Toolbar>
-            <Stack direction="row" spacing={50}>
-              <Link to="/about">
-                <Button variant="contained" size="small">
-                  About
-                </Button>
-              </Link>
-              <Link to="/contact">
-                <Button variant="contained" size="small">
-                  Contact
-                </Button>
-              </Link>
-              <Link to="/privacyPolicy">
-                <Button variant="contained" size="small">
-                  Privacy Policy
-                </Button>
-              </Link>
-            </Stack>
-          </Toolbar>
+          <AppBar position="static">
+            <Toolbar disableGutters>
+              <Container maxWidth="xl">
+                <Box
+                  sx={{
+                    flexGrow: 1,
+                    display: { xs: "flex", md: "flex" },
+                    justifyContent: "space-evenly",
+                  }}
+                >
+                  <Button
+                    size="small"
+                    component={RouterLink}
+                    to="/about"
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontFamily: "Noto sans",
+                    }}
+                  >
+                    About
+                  </Button>
+                  <Button
+                    size="small"
+                    component={RouterLink}
+                    to="/contact"
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontFamily: "Noto sans",
+                    }}
+                  >
+                    Contact
+                  </Button>
+                  <Button
+                    size="small"
+                    component={RouterLink}
+                    to="/privacyPolicy"
+                    onClick={handleCloseNavMenu}
+                    sx={{
+                      my: 2,
+                      color: "white",
+                      display: "block",
+                      fontFamily: "Noto sans",
+                    }}
+                  >
+                    Privacy Policy
+                  </Button>
+                </Box>
+              </Container>
+            </Toolbar>
+          </AppBar>
         </footer>
       </div>
     </Router>
