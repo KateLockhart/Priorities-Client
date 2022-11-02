@@ -10,8 +10,7 @@ export const Home = () => {
       <Grid
         container
         sx={{
-          height: "80vh",
-          width: "100vw",
+          width: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
@@ -22,159 +21,157 @@ export const Home = () => {
           sx={{
             height: "60vh",
             width: "80vw",
-            my: 15,
-            mx: 10,
+            marginTop: 12,
+            my: 12,
+            mx: 12,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
           }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 10,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-              padding: "2%",
-            }}
-          >
-            <Grid item xs={6}>
-              <h2>
-                Let us know your
-                <br />
-                <b>Priorities</b>
-                <br />
-                and we'll do the all sorting for you.
-              </h2>
-            </Grid>
-            <Grid
-              item
-              xs={4}
-              // sx={{
-              //     backgroundImage: 'url(../../public/assets/undraw_ideas_flow_re_bmea.svg)',
-              //     backgroundRepeat: 'no-repeat',
-              //     backgroundSize: 'cover',
-              //     backgroundPosition: 'center',
-              // }}
+          <Grid item xs={5} md={6}>
+            <Typography
+              variant="h4"
+              sx={{
+                fontFamily: "Noto sans",
+                fontWeight: 400,
+                letterSpacing: ".3rem",
+              }}
             >
-              <img
-                src="/assets/undraw_ideas_flow_re_bmea.svg"
-                alt=""
-                className="homeImg"
-                // sx={{ height: "5em", width: "30em" }}
-              />
-            </Grid>
-          </Box>
+              An easier way <br /> to find focus &
+              <Typography
+                variant="h1"
+                sx={{
+                  color: "var(--blue)",
+                  fontFamily: "Noto sans",
+                  fontWeight: 500,
+                  fontStyle: "italic",
+                  letterSpacing: ".3rem",
+                }}
+              >
+                Prioritize
+              </Typography>
+              your day.
+            </Typography>
+          </Grid>
+          <Grid item xs={4} md={5}>
+            <img
+              src="/assets/images/undraw_ideas_flow_fade98.svg"
+              alt=""
+              className="homeImg"
+              id="firstHomeImg"
+            />
+          </Grid>
         </Paper>
 
         <Paper
           elevation="6"
-          sx={{ height: "60vh", width: "80vw", my: 15, mx: 10 }}
+          sx={{
+            height: "60vh",
+            width: "80vw",
+            my: 12.5,
+            mx: 12,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
+          }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 12,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Grid item xs={4}>
-              <img
-                src="/assets/undraw_key_points_re_u903.svg"
-                alt=""
-                className="homeImg"
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h3">Sample Title for Section</Typography>
-              <Typography variant="body1" gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ultrices augue auctor, maximus diam a, aliquet ex. Mauris
-                eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
-                placerat et ligula et, suscipit convallis elit. Suspendisse
-                elementum egestas maximus. Donec accumsan, sapien sed tincidunt
-                venenatis, velit libero mollis urna, vel condimentum justo velit
-                vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
-                vitae tellus sodales porttitor tempor quis elit.
-              </Typography>
-            </Grid>
-          </Box>
+          <Grid item xs={4}>
+            <img
+              src="/assets/images/undraw_key_points_4d9699.svg"
+              alt=""
+              className="homeImg"
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
+              lorem quis massa feugiat fringilla. Donec ipsum mi, placerat et
+              ligula et, suscipit convallis elit. Suspendisse elementum egestas
+              maximus. Donec accumsan, sapien sed tincidunt venenatis, velit
+              libero mollis urna, vel condimentum justo velit vitae sem. Nunc
+              viverra est a luctus rhoncus. Cras eget felis vitae tellus sodales
+              porttitor tempor quis elit.
+            </Typography>
+          </Grid>
         </Paper>
 
         <Paper
           elevation="6"
-          sx={{ height: "60vh", width: "80vw", my: 15, mx: 10 }}
+          sx={{
+            height: "60vh",
+            width: "80vw",
+            my: 12.5,
+            mx: 12,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
+          }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 12,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Grid item xs={6}>
-              <Typography variant="h3">Sample Title for Section</Typography>
-              <Typography variant="body1" gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ultrices augue auctor, maximus diam a, aliquet ex. Mauris
-                eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
-                placerat et ligula et, suscipit convallis elit. Suspendisse
-                elementum egestas maximus. Donec accumsan, sapien sed tincidunt
-                venenatis, velit libero mollis urna, vel condimentum justo velit
-                vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
-                vitae tellus sodales porttitor tempor quis elit.
-              </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <img
-                src="/assets/undraw_work_in_progress_re_byic.svg"
-                alt=""
-                className="homeImg"
-              />
-            </Grid>
-          </Box>
+          <Grid item xs={6}>
+            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
+              lorem quis massa feugiat fringilla. Donec ipsum mi, placerat et
+              ligula et, suscipit convallis elit. Suspendisse elementum egestas
+              maximus. Donec accumsan, sapien sed tincidunt venenatis, velit
+              libero mollis urna, vel condimentum justo velit vitae sem. Nunc
+              viverra est a luctus rhoncus. Cras eget felis vitae tellus sodales
+              porttitor tempor quis elit.
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <img
+              src="/assets/images/undraw_work_in_progress_fade98.svg"
+              alt=""
+              className="homeImg"
+            />
+          </Grid>
         </Paper>
 
         <Paper
           elevation="6"
-          sx={{ height: "60vh", width: "80vw", my: 15, mx: 10 }}
+          sx={{
+            height: "60vh",
+            width: "80vw",
+            my: 12.5,
+            mx: 12,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
+          }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 12,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Grid item xs={4}>
-              <img
-                src="/assets/undraw_conversation_re_c26v.svg"
-                alt=""
-                className="homeImg"
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h3">Sample Title for Section</Typography>
-              <Typography variant="body1" gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ultrices augue auctor, maximus diam a, aliquet ex. Mauris
-                eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
-                placerat et ligula et, suscipit convallis elit. Suspendisse
-                elementum egestas maximus. Donec accumsan, sapien sed tincidunt
-                venenatis, velit libero mollis urna, vel condimentum justo velit
-                vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
-                vitae tellus sodales porttitor tempor quis elit.
-              </Typography>
-            </Grid>
-          </Box>
+          <Grid item xs={4}>
+            <img
+              src="/assets/images/undraw_conversation_4d9699.svg"
+              alt=""
+              className="homeImg"
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
+              lorem quis massa feugiat fringilla. Donec ipsum mi, placerat et
+              ligula et, suscipit convallis elit. Suspendisse elementum egestas
+              maximus. Donec accumsan, sapien sed tincidunt venenatis, velit
+              libero mollis urna, vel condimentum justo velit vitae sem. Nunc
+              viverra est a luctus rhoncus. Cras eget felis vitae tellus sodales
+              porttitor tempor quis elit.
+            </Typography>
+          </Grid>
         </Paper>
       </Grid>
     </div>
