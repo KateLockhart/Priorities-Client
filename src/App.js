@@ -241,12 +241,9 @@ function App() {
             <Container
               maxWidth="xl"
               sx={{
-                position: "absolute",
+                position: "relative",
                 backgroundColor: "#4d9699",
                 height: "8vh",
-                zIndex: 1,
-                left: 0,
-                bottom: 0,
               }}
             >
               <Box

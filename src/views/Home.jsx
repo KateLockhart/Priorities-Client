@@ -10,7 +10,6 @@ export const Home = () => {
       <Grid
         container
         sx={{
-          height: "85vh",
           width: "100%",
           display: "flex",
           alignItems: "center",
@@ -22,8 +21,8 @@ export const Home = () => {
           sx={{
             height: "60vh",
             width: "80vw",
-            my: 12,
-            mx: 10,
+            my: 12.5,
+            mx: 12,
             display: "flex",
             flexDirection: "row",
             alignItems: "center",
@@ -68,113 +67,110 @@ export const Home = () => {
 
         <Paper
           elevation="6"
-          sx={{ height: "60vh", width: "80vw", my: 15, mx: 10 }}
+          sx={{
+            height: "60vh",
+            width: "80vw",
+            my: 12.5,
+            mx: 12,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
+          }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 12,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Grid item xs={4}>
-              <img
-                src="/assets/undraw_key_points_re_u903.svg"
-                alt=""
-                className="homeImg"
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h3">Sample Title for Section</Typography>
-              <Typography variant="body1" gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ultrices augue auctor, maximus diam a, aliquet ex. Mauris
-                eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
-                placerat et ligula et, suscipit convallis elit. Suspendisse
-                elementum egestas maximus. Donec accumsan, sapien sed tincidunt
-                venenatis, velit libero mollis urna, vel condimentum justo velit
-                vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
-                vitae tellus sodales porttitor tempor quis elit.
-              </Typography>
-            </Grid>
-          </Box>
+          <Grid item xs={4}>
+            <img
+              src="/assets/undraw_key_points_re_u903.svg"
+              alt=""
+              className="homeImg"
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
+              lorem quis massa feugiat fringilla. Donec ipsum mi, placerat et
+              ligula et, suscipit convallis elit. Suspendisse elementum egestas
+              maximus. Donec accumsan, sapien sed tincidunt venenatis, velit
+              libero mollis urna, vel condimentum justo velit vitae sem. Nunc
+              viverra est a luctus rhoncus. Cras eget felis vitae tellus sodales
+              porttitor tempor quis elit.
+            </Typography>
+          </Grid>
         </Paper>
 
         <Paper
           elevation="6"
-          sx={{ height: "60vh", width: "80vw", my: 15, mx: 10 }}
+          sx={{
+            height: "60vh",
+            width: "80vw",
+            my: 12.5,
+            mx: 12,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
+          }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 12,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Grid item xs={6}>
-              <Typography variant="h3">Sample Title for Section</Typography>
-              <Typography variant="body1" gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ultrices augue auctor, maximus diam a, aliquet ex. Mauris
-                eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
-                placerat et ligula et, suscipit convallis elit. Suspendisse
-                elementum egestas maximus. Donec accumsan, sapien sed tincidunt
-                venenatis, velit libero mollis urna, vel condimentum justo velit
-                vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
-                vitae tellus sodales porttitor tempor quis elit.
-              </Typography>
-            </Grid>
-            <Grid item xs={4}>
-              <img
-                src="/assets/undraw_work_in_progress_re_byic.svg"
-                alt=""
-                className="homeImg"
-              />
-            </Grid>
-          </Box>
+          <Grid item xs={6}>
+            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
+              lorem quis massa feugiat fringilla. Donec ipsum mi, placerat et
+              ligula et, suscipit convallis elit. Suspendisse elementum egestas
+              maximus. Donec accumsan, sapien sed tincidunt venenatis, velit
+              libero mollis urna, vel condimentum justo velit vitae sem. Nunc
+              viverra est a luctus rhoncus. Cras eget felis vitae tellus sodales
+              porttitor tempor quis elit.
+            </Typography>
+          </Grid>
+          <Grid item xs={4}>
+            <img
+              src="/assets/undraw_work_in_progress_re_byic.svg"
+              alt=""
+              className="homeImg"
+            />
+          </Grid>
         </Paper>
 
         <Paper
           elevation="6"
-          sx={{ height: "60vh", width: "80vw", my: 15, mx: 10 }}
+          sx={{
+            height: "60vh",
+            width: "80vw",
+            my: 12.5,
+            mx: 12,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
+          }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 12,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-            }}
-          >
-            <Grid item xs={4}>
-              <img
-                src="/assets/undraw_conversation_re_c26v.svg"
-                alt=""
-                className="homeImg"
-              />
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h3">Sample Title for Section</Typography>
-              <Typography variant="body1" gutterBottom>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-                ultrices augue auctor, maximus diam a, aliquet ex. Mauris
-                eleifend lorem quis massa feugiat fringilla. Donec ipsum mi,
-                placerat et ligula et, suscipit convallis elit. Suspendisse
-                elementum egestas maximus. Donec accumsan, sapien sed tincidunt
-                venenatis, velit libero mollis urna, vel condimentum justo velit
-                vitae sem. Nunc viverra est a luctus rhoncus. Cras eget felis
-                vitae tellus sodales porttitor tempor quis elit.
-              </Typography>
-            </Grid>
-          </Box>
+          <Grid item xs={4}>
+            <img
+              src="/assets/undraw_conversation_re_c26v.svg"
+              alt=""
+              className="homeImg"
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography variant="body1" gutterBottom>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+              ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
+              lorem quis massa feugiat fringilla. Donec ipsum mi, placerat et
+              ligula et, suscipit convallis elit. Suspendisse elementum egestas
+              maximus. Donec accumsan, sapien sed tincidunt venenatis, velit
+              libero mollis urna, vel condimentum justo velit vitae sem. Nunc
+              viverra est a luctus rhoncus. Cras eget felis vitae tellus sodales
+              porttitor tempor quis elit.
+            </Typography>
+          </Grid>
         </Paper>
       </Grid>
     </div>
