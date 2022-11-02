@@ -10,8 +10,8 @@ export const Home = () => {
       <Grid
         container
         sx={{
-          height: "80vh",
-          width: "100vw",
+          height: "85vh",
+          width: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "space-evenly",
@@ -22,48 +22,48 @@ export const Home = () => {
           sx={{
             height: "60vh",
             width: "80vw",
-            my: 15,
+            my: 12,
             mx: 10,
+            display: "flex",
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-evenly",
+            padding: "5%",
           }}
         >
-          <Box
-            sx={{
-              my: 12,
-              mx: 10,
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-evenly",
-              padding: "2%",
-            }}
-          >
-            <Grid item xs={6}>
-              <h2>
-                Let us know your
-                <br />
-                <b>Priorities</b>
-                <br />
-                and we'll do the all sorting for you.
-              </h2>
-            </Grid>
-            <Grid
-              item
-              xs={4}
-              // sx={{
-              //     backgroundImage: 'url(../../public/assets/undraw_ideas_flow_re_bmea.svg)',
-              //     backgroundRepeat: 'no-repeat',
-              //     backgroundSize: 'cover',
-              //     backgroundPosition: 'center',
-              // }}
+          <Grid item xs={5} md={6}>
+            <Typography
+              variant="h4"
+              sx={{
+                fontFamily: "Noto sans",
+                fontWeight: 400,
+                letterSpacing: ".3rem",
+              }}
             >
-              <img
-                src="/assets/undraw_ideas_flow_re_bmea.svg"
-                alt=""
-                className="homeImg"
-                // sx={{ height: "5em", width: "30em" }}
-              />
-            </Grid>
-          </Box>
+              An easier way <br /> to find focus &
+              <Typography
+                variant="h1"
+                sx={{
+                  color: "var(--blue)",
+                  fontFamily: "Noto sans",
+                  fontWeight: 500,
+                  fontStyle: "italic",
+                  letterSpacing: ".3rem",
+                }}
+              >
+                Prioritize
+              </Typography>
+              your day.
+            </Typography>
+          </Grid>
+          <Grid item xs={4} md={5}>
+            <img
+              src="/assets/images/undraw_ideas_flow_fade98.svg"
+              alt=""
+              className="homeImg"
+              id="firstHomeImg"
+            />
+          </Grid>
         </Paper>
 
         <Paper

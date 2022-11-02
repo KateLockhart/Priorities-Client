@@ -13,12 +13,15 @@
 }
 
 .homeImg {
-  width: 40vh;
-  height: 25vw;
-  /* object-fit: contain; */
+  object-fit: cover;
 }
 
-nav {
+#firstHomeImg {
+  height: 95%;
+  width: 85%;
+}
+
+/* nav {
   height: 15vh;
   width: 100%;
   background-image: linear-gradient(#6c63ff, #f9fafb);
@@ -27,9 +30,9 @@ nav {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-}
+} */
 
-footer {
+/* footer {
   height: 13vh;
   width: 100%;
   background-image: linear-gradient(#f9fafb, #6c63ff);
@@ -38,7 +41,7 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-}
+}  */
 
 :link {
   text-decoration: none;

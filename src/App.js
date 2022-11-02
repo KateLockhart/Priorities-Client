@@ -20,7 +20,6 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 
 // TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
@@ -65,8 +64,14 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <AppBar position="static">
-          <Container maxWidth="xl">
+        <AppBar position="fixed">
+          <Container
+            maxWidth="xl"
+            sx={{
+              backgroundColor: "#4d9699",
+              height: "10vh",
+            }}
+          >
             <Toolbar disableGutters>
               <Typography
                 variant="h6"
@@ -232,62 +237,84 @@ function App() {
         {/* <button onClick={fetchData}>Press the Button to Fetch</button> */}
 
         <footer>
-          <AppBar position="static">
-            <Toolbar disableGutters>
-              <Container maxWidth="xl">
-                <Box
+          <Toolbar disableGutters>
+            <Container
+              maxWidth="xl"
+              sx={{
+                position: "absolute",
+                backgroundColor: "#4d9699",
+                height: "8vh",
+                zIndex: 1,
+                left: 0,
+                bottom: 0,
+              }}
+            >
+              <Box
+                sx={{
+                  flexGrow: 1,
+                  display: { xs: "flex", md: "flex" },
+                  justifyContent: "space-evenly",
+                }}
+              >
+                <Button
+                  size="small"
+                  component={RouterLink}
+                  to="/about"
+                  onClick={handleCloseNavMenu}
                   sx={{
-                    flexGrow: 1,
-                    display: { xs: "flex", md: "flex" },
-                    justifyContent: "space-evenly",
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
                   }}
                 >
-                  <Button
-                    size="small"
-                    component={RouterLink}
-                    to="/about"
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      my: 2,
-                      color: "white",
-                      display: "block",
-                      fontFamily: "Noto sans",
-                    }}
-                  >
-                    About
-                  </Button>
-                  <Button
-                    size="small"
-                    component={RouterLink}
-                    to="/contact"
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      my: 2,
-                      color: "white",
-                      display: "block",
-                      fontFamily: "Noto sans",
-                    }}
-                  >
-                    Contact
-                  </Button>
-                  <Button
-                    size="small"
-                    component={RouterLink}
-                    to="/privacyPolicy"
-                    onClick={handleCloseNavMenu}
-                    sx={{
-                      my: 2,
-                      color: "white",
-                      display: "block",
-                      fontFamily: "Noto sans",
-                    }}
-                  >
-                    Privacy Policy
-                  </Button>
-                </Box>
-              </Container>
-            </Toolbar>
-          </AppBar>
+                  About
+                </Button>
+                <Button
+                  size="small"
+                  component={RouterLink}
+                  to="/contact"
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                  }}
+                >
+                  Contact
+                </Button>
+                <Button
+                  size="small"
+                  component={RouterLink}
+                  to="/privacyPolicy"
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                  }}
+                >
+                  Privacy Policy
+                </Button>
+                <Button
+                  size="small"
+                  disableFocusRipple
+                  disableElevation
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                    cursor: "default",
+                  }}
+                >
+                  © Priorities 2022
+                </Button>
+              </Box>
+            </Container>
+          </Toolbar>
         </footer>
       </div>
     </Router>
