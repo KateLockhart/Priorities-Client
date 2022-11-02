@@ -21,7 +21,8 @@ export const Home = () => {
           sx={{
             height: "60vh",
             width: "80vw",
-            my: 12.5,
+            marginTop: 12,
+            my: 12,
             mx: 12,
             display: "flex",
             flexDirection: "row",
@@ -81,7 +82,7 @@ export const Home = () => {
         >
           <Grid item xs={4}>
             <img
-              src="/assets/undraw_key_points_re_u903.svg"
+              src="/assets/images/undraw_key_points_4d9699.svg"
               alt=""
               className="homeImg"
             />
@@ -130,7 +131,7 @@ export const Home = () => {
           </Grid>
           <Grid item xs={4}>
             <img
-              src="/assets/undraw_work_in_progress_re_byic.svg"
+              src="/assets/images/undraw_work_in_progress_fade98.svg"
               alt=""
               className="homeImg"
             />
@@ -153,7 +154,7 @@ export const Home = () => {
         >
           <Grid item xs={4}>
             <img
-              src="/assets/undraw_conversation_re_c26v.svg"
+              src="/assets/images/undraw_conversation_4d9699.svg"
               alt=""
               className="homeImg"
             />
