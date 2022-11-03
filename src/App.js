@@ -24,7 +24,7 @@ import Button from "@mui/material/Button";
 
 // TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
 // TODO: Test look of links vs buttons in both footer and nav.
-// TODO: Convert nav to MUI AppBar and style accordingly
+// TODO: Fix MUI AppBar width on lg screens
 // Stretch Goal: add 'Productivity Tips' view to authViews and create page of resources
 const authViews = ["My Priority Matrix"];
 const authMenu = ["Account", "Logout"];
@@ -64,12 +64,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <AppBar position="fixed">
+        <AppBar position="fixed" sx={{ width: "100%" }}>
           <Container
             maxWidth="xl"
             sx={{
               backgroundColor: "#4d9699",
               height: "10vh",
+              maxWidth: "100%",
             }}
           >
             <Toolbar disableGutters>

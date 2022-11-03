@@ -10,11 +10,46 @@ export const Login = () => {
   // TODO: Implement full Login form build and functionality
   return (
     <div>
-      <Box sx={{ flexGrow: 1, padding: "4%" }}>
-        <Typography variant="h1">Login</Typography>
-        <Grid container>
-          <Grid item xs={10} sm={8} md={8}>
-            <Paper elevation="6">
+      <Box sx={{ flexGrow: 1, padding: "3%" }}>
+        <Paper
+          elevation="6"
+          sx={{
+            height: "50vh",
+            marginTop: 13,
+            marginBottom: 2.2,
+            mx: 12,
+            paddingLeft: "5%",
+            paddingRight: "5%",
+            paddingBottom: "6%",
+            paddingTop: "4%",
+          }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              color: "var(--blue)",
+              fontFamily: "Noto sans",
+              fontWeight: 400,
+              letterSpacing: ".3rem",
+              paddingBottom: "1%",
+            }}
+          >
+            Login
+          </Typography>
+          <Grid container sx={{ borderTop: "3px solid var(--blue)" }}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              sx={{
+                padding: "8%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
               <Box
                 component="form"
                 sx={{
@@ -34,21 +69,54 @@ export const Login = () => {
                     label="Password"
                     type="password"
                     variant="outlined"
+                    // sx={{ color: "var(--blue)" }}
                   />
                   <Button variant="outlined" color="success">
                     Login
                   </Button>
                 </FormControl>
               </Box>
-            </Paper>
+            </Grid>
+            <Grid
+              item
+              xs={0}
+              sm={6}
+              md={6}
+              sx={{
+                padding: "4.5%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: "Noto sans",
+                  fontWeight: 300,
+                  letterSpacing: ".3rem",
+                }}
+              >
+                Don't have an account yet?
+              </Typography>
+              <img
+                src="/assets/images/undraw_hello_fade98.svg"
+                alt=""
+                id="loginImg"
+              />
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: "Noto sans",
+                  fontWeight: 200,
+                }}
+              >
+                Use the sign up button above to get started!
+              </Typography>
+            </Grid>
           </Grid>
-          <Grid item xs={2} sm={4} md={4}>
-            <Paper elevation="6">
-              Don't have an account? Use the sign up button above to get
-              started!
-            </Paper>
-          </Grid>
-        </Grid>
+        </Paper>
       </Box>
     </div>
   );
