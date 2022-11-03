@@ -88,7 +88,16 @@ export const Home = () => {
             />
           </Grid>
           <Grid item xs={6}>
-            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Noto sans",
+                fontWeight: 300,
+                letterSpacing: ".3rem",
+              }}
+            >
+              Sample Title for Section
+            </Typography>
             <Typography variant="body1" gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
@@ -117,7 +126,16 @@ export const Home = () => {
           }}
         >
           <Grid item xs={6}>
-            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Noto sans",
+                fontWeight: 300,
+                letterSpacing: ".3rem",
+              }}
+            >
+              Sample Title for Section
+            </Typography>
             <Typography variant="body1" gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
@@ -160,7 +178,16 @@ export const Home = () => {
             />
           </Grid>
           <Grid item xs={6}>
-            <Typography variant="h3">Sample Title for Section</Typography>
+            <Typography
+              variant="h3"
+              sx={{
+                fontFamily: "Noto sans",
+                fontWeight: 300,
+                letterSpacing: ".3rem",
+              }}
+            >
+              Sample Title for Section
+            </Typography>
             <Typography variant="body1" gutterBottom>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
               ultrices augue auctor, maximus diam a, aliquet ex. Mauris eleifend
