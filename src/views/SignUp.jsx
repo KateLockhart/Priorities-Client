@@ -17,19 +17,76 @@ export const SignUp = () => {
   return (
     <div id="signUpPage">
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
-        <Typography variant="h1">Sign Up</Typography>
-        <Grid container>
-          <Grid item xs={2} sm={3} md={3}>
-            <Paper elevation="6">
-              Sign up to get started on prioritizing your days.
-            </Paper>
-          </Grid>
-          <Grid item xs={10} sm={9} md={9}>
-            <Paper elevation="6">
+        <Paper
+          elevation="6"
+          sx={{
+            height: "60vh",
+            marginTop: 12,
+            // marginBottom: 2,
+            mx: 12,
+            paddingLeft: "3%",
+            paddingRight: "3%",
+            paddingBottom: "2%",
+            paddingTop: "2%",
+          }}
+        >
+          <Typography
+            variant="h2"
+            sx={{
+              color: "var(--blue)",
+              fontFamily: "Noto sans",
+              fontWeight: 400,
+              letterSpacing: ".3rem",
+              paddingBottom: "1%",
+            }}
+          >
+            Sign Up
+          </Typography>
+          <Grid container sx={{ borderTop: "3px solid var(--blue)" }}>
+            <Grid
+              item
+              xs={0}
+              sm={6}
+              md={6}
+              sx={{
+                padding: "4%",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                variant="h5"
+                sx={{
+                  fontFamily: "Noto sans",
+                  fontWeight: 200,
+                }}
+              >
+                Sign up to get started on prioritizing your days.
+              </Typography>
+              <img
+                src="/assets/images/undraw_solution_mindset_fade98.svg"
+                alt=""
+                id="signUpImg"
+              />
+            </Grid>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              md={6}
+              sx={{
+                padding: "1%",
+                display: "flex",
+                justifyContent: "space-evenly",
+                alignItems: "center",
+              }}
+            >
               <Box
                 component="form"
                 sx={{
-                  "& .MuiTextField-root": { m: 1, width: "25ch" },
+                  "& .MuiTextField-root": { m: 1, width: "45ch" },
                 }}
                 noValidate
                 autoComplete="off"
@@ -60,13 +117,13 @@ export const SignUp = () => {
                     type="password"
                     variant="outlined"
                   />
-                  <FormControlLabel
+                  {/* <FormControlLabel
                     control={<Checkbox color="success" />}
                     label="I would like to receive notifications of my priorities."
-                  />
+                  /> */}
 
                   {/* Notification Preference drop down */}
-                  <InputLabel id="notification-select-label">
+                  {/* <InputLabel id="notification-select-label">
                     Notification Preference
                   </InputLabel>
                   <Select
@@ -79,20 +136,19 @@ export const SignUp = () => {
                     <MenuItem value={"email"}>Email</MenuItem>
                     <MenuItem value={"phone"}>Text Message</MenuItem>
                   </Select>
-
                   <TextField
                     id="outlined-basic"
                     label="Phone Number"
                     variant="outlined"
-                  />
+                  /> */}
                   <Button variant="outlined" color="success">
                     Sign Up
                   </Button>
                 </FormControl>
               </Box>
-            </Paper>
+            </Grid>
           </Grid>
-        </Grid>
+        </Paper>
       </Box>
     </div>
   );

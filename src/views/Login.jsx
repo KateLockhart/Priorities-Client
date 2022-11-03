@@ -100,13 +100,11 @@ export const Login = () => {
               >
                 Don't have an account yet?
               </Typography>
-
               <img
                 src="/assets/images/undraw_hello_fade98.svg"
                 alt=""
                 id="loginImg"
               />
-
               <Typography
                 variant="h6"
                 sx={{
