@@ -27,7 +27,7 @@ export const SignUp = () => {
             paddingLeft: "3%",
             paddingRight: "3%",
             paddingBottom: "2%",
-            paddingTop: "2%",
+            paddingTop: "1.8%",
           }}
         >
           <Typography
