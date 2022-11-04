@@ -6,7 +6,17 @@ import {
   Route,
   Link as RouterLink,
 } from "react-router-dom";
-import { Home, Matrix, Login, SignUp, About, Contact, Privacy } from "./views";
+import {
+  Home,
+  Matrix,
+  Login,
+  SignUp,
+  About,
+  Contact,
+  Privacy,
+  CreateCategory,
+  CreatePriority,
+} from "./views";
 
 import AppBar from "@mui/material/AppBar";
 import Container from "@mui/material/Container";
@@ -134,9 +144,31 @@ function App() {
                   >
                     <Typography textAlign="center">Sign Up</Typography>
                   </MenuItem>
+                  {/* TODO: Will conditionally render links/views upon login */}
+                  <MenuItem
+                    component={RouterLink}
+                    to="/matrix"
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">Priority Matrix</Typography>
+                  </MenuItem>
+                  <MenuItem
+                    component={RouterLink}
+                    to="/createPriority"
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">Create Priority</Typography>
+                  </MenuItem>
+                  <MenuItem
+                    component={RouterLink}
+                    to="/createCategory"
+                    onClick={handleCloseNavMenu}
+                  >
+                    <Typography textAlign="center">Create Category</Typography>
+                  </MenuItem>
                 </Menu>
               </Box>
-              <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+              {/* Icon to sit in front of name in mobile view <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
               <Typography
                 variant="h5"
                 noWrap
@@ -181,6 +213,45 @@ function App() {
                   }}
                 >
                   Sign Up
+                </Button>
+                <Button
+                  component={RouterLink}
+                  to="/matrix"
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                  }}
+                >
+                  Priority Matrix
+                </Button>
+                <Button
+                  component={RouterLink}
+                  to="/createPriority"
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                  }}
+                >
+                  Create Priority
+                </Button>
+                <Button
+                  component={RouterLink}
+                  to="/createCategory"
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    fontFamily: "Noto sans",
+                  }}
+                >
+                  Create Category
                 </Button>
               </Box>
               <Box sx={{ flexGrow: 0 }}>
@@ -228,6 +299,8 @@ function App() {
         <Routes>
           <Route path="" element={<Home />}></Route>
           <Route path="matrix" element={<Matrix />}></Route>
+          <Route path="createCategory" element={<CreateCategory />}></Route>
+          <Route path="createPriority" element={<CreatePriority />}></Route>
           <Route path="login" element={<Login />} />
           <Route path="signUp" element={<SignUp />} />
           <Route path="about" element={<About />}></Route>
