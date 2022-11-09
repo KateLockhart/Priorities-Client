@@ -22,30 +22,30 @@ export const CreatePriority = () => {
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
         <Paper
           elevation="6"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-            height: "60vh",
-            marginTop: 12,
-            // marginBottom: 2,
-            mx: 12,
-            paddingLeft: "3%",
-            paddingRight: "3%",
-            paddingBottom: "2%",
-            paddingTop: "1.8%",
-          }}
+          // sx={{
+          //   display: "flex",
+          //   alignItems: "center",
+          //   flexDirection: "column",
+          //   justifyContent: "space-evenly",
+          //   height: "60vh",
+          //   marginTop: 12,
+          //   // marginBottom: 2,
+          //   mx: 12,
+          //   paddingLeft: "3%",
+          //   paddingRight: "3%",
+          //   paddingBottom: "2%",
+          //   paddingTop: "1.8%",
+          // }}
         >
           <Typography
             variant="h3"
-            sx={{
-              color: "var(--blue)",
-              fontFamily: "Noto sans",
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              paddingBottom: "1%",
-            }}
+            // sx={{
+            //   color: "var(--blue)",
+            //   fontFamily: "Noto sans",
+            //   fontWeight: 400,
+            //   letterSpacing: ".3rem",
+            //   paddingBottom: "1%",
+            // }}
           >
             Add a Priority
           </Typography>
@@ -98,11 +98,11 @@ export const CreatePriority = () => {
                 sx={{
                   my: 2,
                   color: "white",
-                  backgroundColor: "var(--blue)",
-                  width: "200px",
-                  display: "block",
-                  alignSelf: "center",
-                  fontFamily: "Noto sans",
+                  // backgroundColor: "var(--blue)",
+                  // width: "200px",
+                  // display: "block",
+                  // alignSelf: "center",
+                  // fontFamily: "Noto sans",
                 }}
               >
                 Add Priority

@@ -17,30 +17,30 @@ export const CreateCategory = () => {
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
         <Paper
           elevation="6"
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            flexDirection: "column",
-            justifyContent: "space-evenly",
-            height: "60vh",
-            marginTop: 12,
-            // marginBottom: 2,
-            mx: 12,
-            paddingLeft: "3%",
-            paddingRight: "3%",
-            paddingBottom: "2%",
-            paddingTop: "1.8%",
-          }}
+          // sx={{
+          //   display: "flex",
+          //   alignItems: "center",
+          //   flexDirection: "column",
+          //   justifyContent: "space-evenly",
+          //   height: "60vh",
+          //   marginTop: 12,
+          //   // marginBottom: 2,
+          //   mx: 12,
+          //   paddingLeft: "3%",
+          //   paddingRight: "3%",
+          //   paddingBottom: "2%",
+          //   paddingTop: "1.8%",
+          // }}
         >
           <Typography
             variant="h3"
-            sx={{
-              color: "var(--blue)",
-              fontFamily: "Noto sans",
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              paddingBottom: "1%",
-            }}
+            // sx={{
+            //   color: "var(--blue)",
+            //   fontFamily: "Noto sans",
+            //   fontWeight: 400,
+            //   letterSpacing: ".3rem",
+            //   paddingBottom: "1%",
+            // }}
           >
             Add a Category
           </Typography>
@@ -75,9 +75,9 @@ export const CreateCategory = () => {
                     type="color"
                     name="color"
                     size="large"
-                    sx={{
-                      width: "350px",
-                    }}
+                    // sx={{
+                    //   width: "350px",
+                    // }}
                   />
 
                   <FormHelperText>
@@ -90,11 +90,11 @@ export const CreateCategory = () => {
                     sx={{
                       my: 2,
                       color: "white",
-                      backgroundColor: "var(--blue)",
-                      width: "150px",
-                      display: "block",
-                      alignSelf: "center",
-                      fontFamily: "Noto sans",
+                      // backgroundColor: "var(--blue)",
+                      // width: "150px",
+                      // display: "block",
+                      // alignSelf: "center",
+                      // fontFamily: "Noto sans",
                     }}
                   >
                     Add Category
@@ -105,25 +105,25 @@ export const CreateCategory = () => {
             <Grid item xs={0} sm={6} md={6}>
               <Typography
                 variant="h4"
-                sx={{
-                  color: "var(--blue)",
-                  fontFamily: "Noto sans",
-                  fontWeight: 300,
-                  letterSpacing: ".1rem",
-                  paddingBottom: "5%",
-                }}
+                // sx={{
+                //   color: "var(--blue)",
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 300,
+                //   letterSpacing: ".1rem",
+                //   paddingBottom: "5%",
+                // }}
               >
                 Why use categories?
               </Typography>
               <Typography
                 variant="p"
-                sx={{
-                  fontFamily: "Noto Serif",
-                  fontWeight: 200,
-                  fontSize: "large",
-                  letterSpacing: ".1rem",
-                  paddingBottom: "1%",
-                }}
+                // sx={{
+                //   fontFamily: "Noto Serif",
+                //   fontWeight: 200,
+                //   fontSize: "large",
+                //   letterSpacing: ".1rem",
+                //   paddingBottom: "1%",
+                // }}
               >
                 Giving your priorities a category can help visually group them
                 by color and organize them on your matrix by category type.
