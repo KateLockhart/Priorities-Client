@@ -13,26 +13,26 @@ export const Login = () => {
       <Box sx={{ flexGrow: 1, padding: "3%" }}>
         <Paper
           elevation="6"
-          sx={{
-            height: "50vh",
-            marginTop: 13,
-            marginBottom: 2.2,
-            mx: 12,
-            paddingLeft: "5%",
-            paddingRight: "5%",
-            paddingBottom: "6%",
-            paddingTop: "4%",
-          }}
+          // sx={{
+          //   height: "50vh",
+          //   marginTop: 13,
+          //   marginBottom: 2.2,
+          //   mx: 12,
+          //   paddingLeft: "5%",
+          //   paddingRight: "5%",
+          //   paddingBottom: "6%",
+          //   paddingTop: "4%",
+          // }}
         >
           <Typography
             variant="h2"
-            sx={{
-              color: "var(--blue)",
-              fontFamily: "Noto sans",
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              paddingBottom: "1%",
-            }}
+            // sx={{
+            //   color: "var(--blue)",
+            //   fontFamily: "Noto sans",
+            //   fontWeight: 400,
+            //   letterSpacing: ".3rem",
+            //   paddingBottom: "1%",
+            // }}
           >
             Login
           </Typography>
@@ -42,13 +42,13 @@ export const Login = () => {
               xs={12}
               sm={6}
               md={6}
-              sx={{
-                padding: "8%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
+              // sx={{
+              //   padding: "8%",
+              //   display: "flex",
+              //   flexDirection: "column",
+              //   justifyContent: "space-around",
+              //   alignItems: "center",
+              // }}
             >
               <Box
                 component="form"
@@ -82,21 +82,21 @@ export const Login = () => {
               xs={0}
               sm={6}
               md={6}
-              sx={{
-                padding: "4.5%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-around",
-                alignItems: "center",
-              }}
+              // sx={{
+              //   padding: "4.5%",
+              //   display: "flex",
+              //   flexDirection: "column",
+              //   justifyContent: "space-around",
+              //   alignItems: "center",
+              // }}
             >
               <Typography
                 variant="h5"
-                sx={{
-                  fontFamily: "Noto sans",
-                  fontWeight: 300,
-                  letterSpacing: ".3rem",
-                }}
+                // sx={{
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 300,
+                //   letterSpacing: ".3rem",
+                // }}
               >
                 Don't have an account yet?
               </Typography>
@@ -107,10 +107,10 @@ export const Login = () => {
               />
               <Typography
                 variant="h6"
-                sx={{
-                  fontFamily: "Noto sans",
-                  fontWeight: 200,
-                }}
+                // sx={{
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 200,
+                // }}
               >
                 Use the sign up button above to get started!
               </Typography>

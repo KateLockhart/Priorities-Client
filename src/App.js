@@ -29,7 +29,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import Button from "@mui/material/Button";
 
 // TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
@@ -74,21 +73,21 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <AppBar position="fixed" sx={{ width: "100%" }}>
+        <AppBar position="relative" sx={{ backgroundColor: "#4d9699" }}>
           <Container
-            maxWidth="xl"
-            sx={{
-              backgroundColor: "#4d9699",
-              height: "10vh",
-              maxWidth: "100%",
-            }}
+          // maxWidth="xl"
+          // sx={{
+          //   backgroundColor: "#4d9699",
+          //   height: "20%",
+          //   maxWidth: "100%",
+          // }}
           >
             <Toolbar disableGutters>
               <Typography
                 variant="h6"
                 noWrap
-                component="a"
-                href="/"
+                component={RouterLink}
+                to="/"
                 sx={{
                   mr: 4,
                   display: { xs: "none", md: "flex" },
@@ -170,17 +169,17 @@ function App() {
               </Box>
               {/* Icon to sit in front of name in mobile view <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
               <Typography
-                variant="h5"
+                variant="h6"
                 noWrap
-                component="a"
-                href=""
+                component={RouterLink}
+                to="/"
                 sx={{
                   mr: 2,
-                  display: { xs: "flex", md: "none" },
+                  display: { xs: "flex", sm: "flex", md: "none" },
                   flexGrow: 1,
                   fontFamily: "Noto sans",
                   fontWeight: 700,
-                  letterSpacing: ".3rem",
+                  letterSpacing: ".1rem",
                   color: "inherit",
                   textDecoration: "none",
                 }}
@@ -314,17 +313,17 @@ function App() {
           <Toolbar disableGutters>
             <Container
               maxWidth="xl"
-              sx={{
-                position: "relative",
-                backgroundColor: "#4d9699",
-                height: "8vh",
-              }}
+              // sx={{
+              //   position: "relative",
+              //   backgroundColor: "#4d9699",
+              //   height: "8vh",
+              // }}
             >
               <Box
                 sx={{
                   flexGrow: 1,
                   display: { xs: "flex", md: "flex" },
-                  justifyContent: "space-evenly",
+                  // justifyContent: "space-evenly",
                 }}
               >
                 <Button

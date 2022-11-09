@@ -65,39 +65,39 @@ export const Matrix = () => {
   return (
     <div>
       <Box
-        sx={{
-          flexGrow: 1,
-          padding: "6%",
-          paddingTop: "8%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
+      // sx={{
+      //   flexGrow: 1,
+      //   padding: "6%",
+      //   paddingTop: "8%",
+      //   display: "flex",
+      //   flexDirection: "column",
+      //   alignItems: "center",
+      // }}
       >
         <Typography
           variant="h3"
-          sx={{
-            color: "var(--blue)",
-            fontFamily: "Noto sans",
-            fontWeight: 400,
-            letterSpacing: ".3rem",
-            paddingBottom: "1%",
-          }}
+          // sx={{
+          //   color: "var(--blue)",
+          //   fontFamily: "Noto sans",
+          //   fontWeight: 400,
+          //   letterSpacing: ".3rem",
+          //   paddingBottom: "1%",
+          // }}
         >
           Your Priority Matrix
         </Typography>
         <Button
           component={RouterLink}
           to="/createPriority"
-          sx={{
-            my: 2,
-            color: "white",
-            backgroundColor: "var(--blue)",
-            width: "250px",
-            display: "block",
-            alignSelf: "center",
-            fontFamily: "Noto sans",
-          }}
+          // sx={{
+          //   my: 2,
+          //   color: "white",
+          //   backgroundColor: "var(--blue)",
+          //   width: "250px",
+          //   display: "block",
+          //   alignSelf: "center",
+          //   fontFamily: "Noto sans",
+          // }}
         >
           Create a New Priority
         </Button>
@@ -116,22 +116,22 @@ export const Matrix = () => {
             <Divider>
               <Typography
                 variant="h6"
-                sx={{
-                  color: "var(--blue)",
-                  fontFamily: "Noto sans",
-                  fontWeight: 400,
-                  letterSpacing: ".1rem",
-                  paddingBottom: "1%",
-                }}
+                // sx={{
+                //   color: "var(--blue)",
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 400,
+                //   letterSpacing: ".1rem",
+                //   paddingBottom: "1%",
+                // }}
               >
                 Important and Urgent
               </Typography>
             </Divider>
             <Item
-              sx={{
-                margin: "1.5%",
-                border: "5px solid var(--green)",
-              }}
+            // sx={{
+            //   margin: "1.5%",
+            //   border: "5px solid var(--green)",
+            // }}
             >
               {/* To be created by API call */}
               <List
@@ -184,66 +184,66 @@ export const Matrix = () => {
             <Divider>
               <Typography
                 variant="h6"
-                sx={{
-                  color: "var(--blue)",
-                  fontFamily: "Noto sans",
-                  fontWeight: 400,
-                  letterSpacing: ".1rem",
-                  paddingBottom: "1%",
-                }}
+                // sx={{
+                //   color: "var(--blue)",
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 400,
+                //   letterSpacing: ".1rem",
+                //   paddingBottom: "1%",
+                // }}
               >
                 Urgent, Less Important
               </Typography>
             </Divider>
             <Item
-              sx={{
-                margin: "1.5%",
-                border: "3px solid var(--dark-yellow)",
-              }}
+            // sx={{
+            //   margin: "1.5%",
+            //   border: "3px solid var(--dark-yellow)",
+            // }}
             ></Item>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Divider>
               <Typography
                 variant="h6"
-                sx={{
-                  color: "var(--blue)",
-                  fontFamily: "Noto sans",
-                  fontWeight: 400,
-                  letterSpacing: ".1rem",
-                  paddingBottom: "1%",
-                }}
+                // sx={{
+                //   color: "var(--blue)",
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 400,
+                //   letterSpacing: ".1rem",
+                //   paddingBottom: "1%",
+                // }}
               >
                 Important, Less Urgent
               </Typography>
             </Divider>
             <Item
-              sx={{
-                margin: "1.5%",
-                border: "3px solid var(--dark-yellow)",
-              }}
+            // sx={{
+            //   margin: "1.5%",
+            //   border: "3px solid var(--dark-yellow)",
+            // }}
             ></Item>
           </Grid>
           <Grid item xs={12} sm={6} md={6}>
             <Divider>
               <Typography
                 variant="h6"
-                sx={{
-                  color: "var(--blue)",
-                  fontFamily: "Noto sans",
-                  fontWeight: 400,
-                  letterSpacing: ".1rem",
-                  paddingBottom: "1%",
-                }}
+                // sx={{
+                //   color: "var(--blue)",
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 400,
+                //   letterSpacing: ".1rem",
+                //   paddingBottom: "1%",
+                // }}
               >
                 Less Urgent and Important
               </Typography>
             </Divider>
             <Item
-              sx={{
-                margin: "1.5%",
-                border: "3px solid var(--light-yellow)",
-              }}
+            // sx={{
+            //   margin: "1.5%",
+            //   border: "3px solid var(--light-yellow)",
+            // }}
             ></Item>
           </Grid>
         </Grid>

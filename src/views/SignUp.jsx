@@ -19,26 +19,26 @@ export const SignUp = () => {
       <Box sx={{ flexGrow: 1, padding: "4%" }}>
         <Paper
           elevation="6"
-          sx={{
-            height: "60vh",
-            marginTop: 12,
-            // marginBottom: 2,
-            mx: 12,
-            paddingLeft: "3%",
-            paddingRight: "3%",
-            paddingBottom: "2%",
-            paddingTop: "1.8%",
-          }}
+          // sx={{
+          //   height: "60vh",
+          //   marginTop: 12,
+          //   // marginBottom: 2,
+          //   mx: 12,
+          //   paddingLeft: "3%",
+          //   paddingRight: "3%",
+          //   paddingBottom: "2%",
+          //   paddingTop: "1.8%",
+          // }}
         >
           <Typography
             variant="h2"
-            sx={{
-              color: "var(--blue)",
-              fontFamily: "Noto sans",
-              fontWeight: 400,
-              letterSpacing: ".3rem",
-              paddingBottom: "1%",
-            }}
+            // sx={{
+            //   color: "var(--blue)",
+            //   fontFamily: "Noto sans",
+            //   fontWeight: 400,
+            //   letterSpacing: ".3rem",
+            //   paddingBottom: "1%",
+            // }}
           >
             Sign Up
           </Typography>
@@ -48,20 +48,20 @@ export const SignUp = () => {
               xs={0}
               sm={6}
               md={6}
-              sx={{
-                padding: "4%",
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-              }}
+              // sx={{
+              //   padding: "4%",
+              //   display: "flex",
+              //   flexDirection: "column",
+              //   justifyContent: "space-evenly",
+              //   alignItems: "center",
+              // }}
             >
               <Typography
                 variant="h5"
-                sx={{
-                  fontFamily: "Noto sans",
-                  fontWeight: 200,
-                }}
+                // sx={{
+                //   fontFamily: "Noto sans",
+                //   fontWeight: 200,
+                // }}
               >
                 Sign up to get started on prioritizing your days.
               </Typography>
@@ -76,12 +76,12 @@ export const SignUp = () => {
               xs={12}
               sm={6}
               md={6}
-              sx={{
-                padding: "1%",
-                display: "flex",
-                justifyContent: "space-evenly",
-                alignItems: "center",
-              }}
+              // sx={{
+              //   padding: "1%",
+              //   display: "flex",
+              //   justifyContent: "space-evenly",
+              //   alignItems: "center",
+              // }}
             >
               <Box
                 component="form"
