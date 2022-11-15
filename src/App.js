@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Home,
@@ -13,7 +13,7 @@ import {
   CreatePriority,
 } from "./views";
 
-import Navbar from "./components/Navbar";
+import { Navbar } from "./components/Navbar";
 
 // TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
 

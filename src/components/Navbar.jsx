@@ -12,6 +12,7 @@ import {
   Box,
   IconButton,
   Button,
+  styled,
 } from "@mui/material";
 import { Menu as MenuIcon } from "@mui/icons-material";
 // TODO: Fix MUI AppBar width on lg screens
@@ -19,27 +20,16 @@ import { Menu as MenuIcon } from "@mui/icons-material";
 // const authViews = ["My Priority Matrix"];
 // const authMenu = ["Account", "Logout"];
 
-function Navbar() {
-  const [anchorElNav, setAnchorElNav] = useState(null);
-  const [anchorElUser, setAnchorElUser] = useState(null);
+const StyledToolbar = styled(Toolbar)({
+  display: "flex",
+  justifyContent: "space-between",
+});
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+export const Navbar = () => {
+  const [open, setOpen] = useState(false);
 
   return (
-    <AppBar position="relative" sx={{ backgroundColor: "#4d9699" }}>
+    <AppBar position="sticky" sx={{ backgroundColor: "#4d9699" }}>
       <Container
       // maxWidth="xl"
       // sx={{
@@ -48,11 +38,11 @@ function Navbar() {
       //   maxWidth: "100%",
       // }}
       >
-        <Toolbar disableGutters>
+        <StyledToolbar disableGutters>
           <Typography
             variant="h6"
             noWrap
-            //component={RouterLink}
+            component={RouterLink}
             to="/"
             sx={{
               mr: 4,
@@ -72,14 +62,12 @@ function Navbar() {
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
-              onClick={handleOpenNavMenu}
+              onClick={(e) => setOpen(true)}
               color="inherit"
             >
               <MenuIcon />
             </IconButton>
             <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
                 horizontal: "left",
@@ -89,8 +77,8 @@ function Navbar() {
                 vertical: "top",
                 horizontal: "left",
               }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
+              open={open}
+              onClose={(e) => setOpen(false)}
               sx={{
                 display: { xs: "block", md: "none" },
               }}
@@ -98,14 +86,14 @@ function Navbar() {
               <MenuItem
                 component={RouterLink}
                 to="/login"
-                onClick={handleCloseNavMenu}
+                onClick={(e) => setOpen(false)}
               >
                 <Typography textAlign="center">Login</Typography>
               </MenuItem>
               <MenuItem
                 component={RouterLink}
                 to="/signUp"
-                onClick={handleCloseNavMenu}
+                onClick={(e) => setOpen(false)}
               >
                 <Typography textAlign="center">Sign Up</Typography>
               </MenuItem>
@@ -113,21 +101,21 @@ function Navbar() {
               <MenuItem
                 component={RouterLink}
                 to="/matrix"
-                onClick={handleCloseNavMenu}
+                onClick={(e) => setOpen(false)}
               >
                 <Typography textAlign="center">Priority Matrix</Typography>
               </MenuItem>
               <MenuItem
                 component={RouterLink}
                 to="/createPriority"
-                onClick={handleCloseNavMenu}
+                onClick={(e) => setOpen(false)}
               >
                 <Typography textAlign="center">Create Priority</Typography>
               </MenuItem>
               <MenuItem
                 component={RouterLink}
                 to="/createCategory"
-                onClick={handleCloseNavMenu}
+                onClick={(e) => setOpen(false)}
               >
                 <Typography textAlign="center">Create Category</Typography>
               </MenuItem>
@@ -156,7 +144,7 @@ function Navbar() {
             <Button
               component={RouterLink}
               to="/login"
-              onClick={handleCloseNavMenu}
+              onClick={(e) => setOpen(false)}
               sx={{
                 my: 2,
                 color: "white",
@@ -169,7 +157,7 @@ function Navbar() {
             <Button
               component={RouterLink}
               to="/signUp"
-              onClick={handleCloseNavMenu}
+              onClick={(e) => setOpen(false)}
               sx={{
                 my: 2,
                 color: "white",
@@ -182,7 +170,7 @@ function Navbar() {
             <Button
               component={RouterLink}
               to="/matrix"
-              onClick={handleCloseNavMenu}
+              onClick={(e) => setOpen(false)}
               sx={{
                 my: 2,
                 color: "white",
@@ -195,7 +183,7 @@ function Navbar() {
             <Button
               component={RouterLink}
               to="/createPriority"
-              onClick={handleCloseNavMenu}
+              onClick={(e) => setOpen(false)}
               sx={{
                 my: 2,
                 color: "white",
@@ -208,7 +196,7 @@ function Navbar() {
             <Button
               component={RouterLink}
               to="/createCategory"
-              onClick={handleCloseNavMenu}
+              onClick={(e) => setOpen(false)}
               sx={{
                 my: 2,
                 color: "white",
@@ -221,14 +209,13 @@ function Navbar() {
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton onClick={(e) => setOpen(true)} sx={{ p: 0 }}>
                 <Avatar alt="" src="" />
               </IconButton>
             </Tooltip>
             <Menu
               sx={{ mt: "45px" }}
               id="menu-appbar"
-              anchorEl={anchorElUser}
               anchorOrigin={{
                 vertical: "top",
                 horizontal: "right",
@@ -238,29 +225,27 @@ function Navbar() {
                 vertical: "top",
                 horizontal: "right",
               }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
+              open={open}
+              onClose={(e) => setOpen(false)}
             >
               <MenuItem
                 component={RouterLink}
                 to="/"
-                onClick={handleCloseUserMenu}
+                onClick={(e) => setOpen(false)}
               >
                 <Typography textAlign="center">Account</Typography>
               </MenuItem>
               <MenuItem
                 component={RouterLink}
                 to="/"
-                onClick={handleCloseUserMenu}
+                onClick={(e) => setOpen(false)}
               >
                 <Typography textAlign="center">Logout</Typography>
               </MenuItem>
             </Menu>
           </Box>
-        </Toolbar>
+        </StyledToolbar>
       </Container>
     </AppBar>
   );
-}
-
-export default Navbar;
+};
