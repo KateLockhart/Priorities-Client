@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import {
   AppBar,
@@ -51,6 +51,13 @@ const UserMenu = styled(Box)(({ theme }) => ({
   marginRight: "20px",
 }));
 
+const NonUserMenu = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  gap: "10px",
+  marginRight: "20px",
+}));
+
 const routes = {
   createCategory: {
     label: "Create Category",
@@ -83,21 +90,59 @@ const routes = {
   },
 };
 
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const hasToken = true;
+  const [windowWidth, setWindowWidth] = useState(getWindowDimensions().width);
+  const hasToken = false;
   let topbarLinks;
   let menuLinks;
 
-  if (hasToken) {
-    topbarLinks = [routes.matrix, routes.createPriority, routes.createCategory];
-    menuLinks = [routes.userAccount, routes.logout];
-  } else {
-    topbarLinks = [routes.login, routes.signUp];
-  }
+  useEffect(() => {
+    function handleResize() {
+      setWindowWidth(getWindowDimensions().width);
+    }
 
-  // hasToken = true, top bar show Matrix, Create Priority, Create Category
-  // hasToken = false, top bar show Login, Sign Up
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  // console.log(windowWidth);
+  // screen <= 600, dropdown hold all links
+  // sccreen > 600, top bar show links
+  if (hasToken) {
+    if (windowWidth <= 600) {
+      menuLinks = [
+        routes.matrix,
+        routes.createPriority,
+        routes.createCategory,
+        routes.userAccount,
+        routes.logout,
+      ];
+      topbarLinks = [];
+    } else {
+      topbarLinks = [
+        routes.matrix,
+        routes.createPriority,
+        routes.createCategory,
+      ];
+      menuLinks = [routes.userAccount, routes.logout];
+    }
+  } else {
+    if (windowWidth <= 600) {
+      menuLinks = [routes.login, routes.signUp];
+      topbarLinks = [];
+    } else {
+      topbarLinks = [routes.login, routes.signUp];
+      menuLinks = [];
+    }
+  }
 
   return (
     <AppBar position="sticky" sx={{ backgroundColor: "#4d9699" }}>
