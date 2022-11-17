@@ -15,9 +15,7 @@ import {
 } from "@mui/material";
 import { AutoGraph } from "@mui/icons-material";
 // TODO: Fix MUI AppBar width on lg screens
-// Stretch Goal: add 'Productivity Tips' view to authViews and create page of resources
-// const authViews = ["My Priority Matrix"];
-// const authMenu = ["Account", "Logout"];
+// Stretch Goal: add 'Productivity Tips' view to logged in view and create page of resources
 
 const StyledToolbar = styled(Toolbar)({
   display: "flex",
@@ -53,8 +51,53 @@ const UserMenu = styled(Box)(({ theme }) => ({
   marginRight: "20px",
 }));
 
+const routes = {
+  createCategory: {
+    label: "Create Category",
+    route: "/createCategory",
+  },
+  createPriority: {
+    label: "Create Priority",
+    route: "/createPriority",
+  },
+  login: {
+    label: "Login",
+    route: "/login",
+  },
+  logout: {
+    label: "Logout",
+    route: "/",
+  },
+  matrix: {
+    label: "Matrix",
+    route: "/matrix",
+  },
+  signUp: {
+    label: "Sign Up",
+    route: "/signUp",
+  },
+  userAccount: {
+    label: "Account",
+    // TODO: Build user account view for update ability
+    route: "/",
+  },
+};
+
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const hasToken = true;
+  let topbarLinks;
+  let menuLinks;
+
+  if (hasToken) {
+    topbarLinks = [routes.matrix, routes.createPriority, routes.createCategory];
+    menuLinks = [routes.userAccount, routes.logout];
+  } else {
+    topbarLinks = [routes.login, routes.signUp];
+  }
+
+  // hasToken = true, top bar show Matrix, Create Priority, Create Category
+  // hasToken = false, top bar show Login, Sign Up
 
   return (
     <AppBar position="sticky" sx={{ backgroundColor: "#4d9699" }}>
@@ -66,138 +109,24 @@ export const Navbar = () => {
           </Typography>
         </Logo>
 
-        {/* <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-          <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={(e) => setOpen(true)}
-            color="inherit"
-          >
-            <MenuIcon />
-          </IconButton>
-          <Menu
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
-            }}
-            open={open}
-            onClose={(e) => setOpen(false)}
-            sx={{
-              display: { xs: "block", md: "none" },
-            }}
-          >
-            <MenuItem
-              component={RouterLink}
-              to="/login"
-              onClick={(e) => setOpen(false)}
-            >
-              <Typography textAlign="center">Login</Typography>
-            </MenuItem>
-            <MenuItem
-              component={RouterLink}
-              to="/signUp"
-              onClick={(e) => setOpen(false)}
-            >
-              <Typography textAlign="center">Sign Up</Typography>
-            </MenuItem>
-            {/* TODO: Will conditionally render links/views upon login */}
-        {/* <MenuItem
-              component={RouterLink}
-              to="/matrix"
-              onClick={(e) => setOpen(false)}
-            >
-              <Typography textAlign="center">Priority Matrix</Typography>
-            </MenuItem>
-            <MenuItem
-              component={RouterLink}
-              to="/createPriority"
-              onClick={(e) => setOpen(false)}
-            >
-              <Typography textAlign="center">Create Priority</Typography>
-            </MenuItem>
-            <MenuItem
-              component={RouterLink}
-              to="/createCategory"
-              onClick={(e) => setOpen(false)}
-            >
-              <Typography textAlign="center">Create Category</Typography>
-            </MenuItem>
-          </Menu>
-        </Box> */}
-
         <NavLinks>
-          <Button
-            component={RouterLink}
-            to="/login"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            Login
-          </Button>
-          <Button
-            component={RouterLink}
-            to="/signUp"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            Sign Up
-          </Button>
-          <Button
-            component={RouterLink}
-            to="/matrix"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            Priority Matrix
-          </Button>
-          <Button
-            component={RouterLink}
-            to="/createPriority"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            Create Priority
-          </Button>
-          <Button
-            component={RouterLink}
-            to="/createCategory"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            Create Category
-          </Button>
+          {topbarLinks.map((l) => {
+            return (
+              <Button
+                component={RouterLink}
+                to={l.route}
+                onClick={(e) => setOpen(false)}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontFamily: "Noto sans",
+                }}
+              >
+                {l.label}
+              </Button>
+            );
+          })}
         </NavLinks>
 
         <UserMenu>
@@ -221,20 +150,17 @@ export const Navbar = () => {
             open={open}
             onClose={(e) => setOpen(false)}
           >
-            <MenuItem
-              component={RouterLink}
-              to="/"
-              onClick={(e) => setOpen(false)}
-            >
-              <Typography textAlign="center">Account</Typography>
-            </MenuItem>
-            <MenuItem
-              component={RouterLink}
-              to="/"
-              onClick={(e) => setOpen(false)}
-            >
-              <Typography textAlign="center">Logout</Typography>
-            </MenuItem>
+            {menuLinks.map((l) => {
+              return (
+                <MenuItem
+                  component={RouterLink}
+                  to={l.route}
+                  onClick={(e) => setOpen(false)}
+                >
+                  <Typography textAlign="center">{l.label}</Typography>
+                </MenuItem>
+              );
+            })}
           </Menu>
         </UserMenu>
       </StyledToolbar>
