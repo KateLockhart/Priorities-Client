@@ -115,7 +115,7 @@ export const Navbar = () => {
   }, []);
   // console.log(windowWidth);
   // screen <= 600, dropdown hold all links
-  // sccreen > 600, top bar show links
+  // screen > 600, top bar show links
   if (hasToken) {
     if (windowWidth <= 600) {
       menuLinks = [
