@@ -18,65 +18,66 @@ import {
   GridView,
 } from "@mui/icons-material";
 
+const routes = [
+  {
+    label: "About",
+    route: "/about",
+  },
+  {
+    label: "Contact",
+    route: "/about",
+  },
+  {
+    label: "Privacy Policy",
+    route: "/about",
+  },
+];
+
+// TODO: User vs public view for site links in mobile view, mobile menu with routing still needs constructed
 export const Footer = () => {
   const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
+  const hasToken = false;
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 
   return (
     // App bar replaced with BottomBar? Bottom bar be Toolbar on med+ and icons on sm & xs
     <footer>
       {/* Web View Appbar */}
-      <Toolbar disableGutters>
+      <Toolbar
+        disableGutters
+        sx={{ position: "fixed", bottom: 0, left: 0, right: 0 }}
+      >
         <Box
           sx={{
             flexGrow: 1,
             backgroundColor: "#4d9699",
-            height: "8vh",
+            height: "7vh",
             display: { xs: "none", sm: "flex", md: "flex" },
             justifyContent: "space-evenly",
           }}
         >
-          <Button
-            size="small"
-            component={RouterLink}
-            to="/about"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            About
-          </Button>
-          <Button
-            size="small"
-            component={RouterLink}
-            to="/contact"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            Contact
-          </Button>
-          <Button
-            size="small"
-            component={RouterLink}
-            to="/privacyPolicy"
-            onClick={(e) => setOpen(false)}
-            sx={{
-              my: 2,
-              color: "white",
-              display: "block",
-              fontFamily: "Noto sans",
-            }}
-          >
-            Privacy Policy
-          </Button>
+          {routes.map((l) => {
+            return (
+              <Button
+                size="small"
+                component={RouterLink}
+                to={l.link}
+                onClick={(e) => setOpen(false)}
+                sx={{
+                  my: 2,
+                  color: "white",
+                  display: "block",
+                  fontFamily: "Noto sans",
+                }}
+              >
+                {l.label}
+              </Button>
+            );
+          })}
           <Button
             size="small"
             disableFocusRipple
@@ -94,17 +95,30 @@ export const Footer = () => {
         </Box>
 
         <BottomNavigation
-          showLabels
           sx={{
             display: { xs: "flex", sm: "none", md: "none" },
             width: "100%",
             backgroundColor: "#4d9699",
             flexDirection: "space-evenly",
           }}
+          value={value}
+          onChange={handleChange}
         >
-          <BottomNavigationAction label="Matrix" icon={<Dataset />} />
-          <BottomNavigationAction label="Priority" icon={<AddBox />} />
-          <BottomNavigationAction label="" icon={<MoreHoriz />} />
+          <BottomNavigationAction
+            label="Matrix"
+            value="matrix"
+            icon={<Dataset />}
+          />
+          <BottomNavigationAction
+            label="Add Priority"
+            value="priority"
+            icon={<AddBox />}
+          />
+          <BottomNavigationAction
+            label="Etc."
+            value="etc"
+            icon={<MoreHoriz />}
+          />
         </BottomNavigation>
       </Toolbar>
     </footer>
