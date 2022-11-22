@@ -1,11 +1,22 @@
-import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { AppBar, Box, Button, Container, Toolbar } from "@mui/material";
+import {
+  Menu,
+  MoreHoriz,
+  AddBox,
+  AddCircle,
+  Dataset,
+  GridView,
+} from "@mui/icons-material";
 
 function Footer() {
   const [open, setOpen] = useState(false);
+
   return (
+    // App bar replaced with BottomBar? Bottom bar be Toolbar on med+ and icons on sm & xs
     <AppBar>
+      {/* Web View Appbar */}
       <Toolbar disableGutters>
         <Container
           maxWidth="xl"
