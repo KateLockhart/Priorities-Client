@@ -7,10 +7,14 @@ import {
   Box,
   Button,
   Container,
+  IconButton,
+  Menu as BottomMenu,
+  MenuItem,
   Toolbar,
+  Typography,
 } from "@mui/material";
 import {
-  Menu,
+  Menu as MenuIcon,
   MoreHoriz,
   AddBox,
   AddCircle,
@@ -25,20 +29,27 @@ const routes = [
   },
   {
     label: "Contact",
-    route: "/about",
+    route: "/contact",
   },
   {
     label: "Privacy Policy",
-    route: "/about",
+    route: "/privacyPolicy",
   },
 ];
 
 // TODO: User vs public view for site links in mobile view, mobile menu with routing still needs constructed
 export const Footer = () => {
-  const [open, setOpen] = useState(false);
+  // const [open, setOpen] = useState(true);
   const [value, setValue] = useState("");
   const hasToken = false;
-
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -66,7 +77,7 @@ export const Footer = () => {
                 size="small"
                 component={RouterLink}
                 to={l.link}
-                onClick={(e) => setOpen(false)}
+                // onClick={(e) => setOpen(false)}
                 sx={{
                   my: 2,
                   color: "white",
@@ -100,6 +111,7 @@ export const Footer = () => {
             width: "100%",
             backgroundColor: "#4d9699",
             flexDirection: "space-evenly",
+            ":selected": { color: "white" },
           }}
           value={value}
           onChange={handleChange}
@@ -112,26 +124,61 @@ export const Footer = () => {
               ":focus": { color: "white" },
               ":selected": { color: "white" },
             }}
+            component={RouterLink}
+            to="/matrix"
           />
           <BottomNavigationAction
             label="Add Priority"
             value="priority"
+            id="menu-action"
+            aria-controls="menu-bottombar"
             icon={<AddBox fontSize="large" sx={{ color: "white" }} />}
             sx={{
               ":focus": { color: "white" },
               ":selected": { color: "white" },
             }}
+            component={RouterLink}
+            to="/createPriority"
           />
           <BottomNavigationAction
             label="Etc."
             value="etc"
+            aria-controls={open ? "menu-bottombar" : undefined}
             icon={<MoreHoriz fontSize="large" sx={{ color: "white" }} />}
             selected="white"
             sx={{
               ":focus": { color: "white" },
               ":selected": { color: "white" },
             }}
+            onClick={handleClick}
           />
+          <BottomMenu
+            id="menu-bottombar"
+            anchorOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "bottom",
+              horizontal: "right",
+            }}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+          >
+            {routes.map((l) => {
+              return (
+                <MenuItem
+                  component={RouterLink}
+                  to={l.route}
+                  onClick={handleClose}
+                >
+                  <Typography textAlign="center">{l.label}</Typography>
+                </MenuItem>
+              );
+            })}
+          </BottomMenu>
         </BottomNavigation>
       </Toolbar>
     </footer>
