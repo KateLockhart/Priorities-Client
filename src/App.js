@@ -14,6 +14,7 @@ import {
 } from "./views";
 
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 // TODO: Conditionally render home page when not logged in(sign up landing and app info), matrix when logged in; nav with same conditional Login/Sign Up and Logout buttons
 
@@ -50,84 +51,7 @@ function App() {
         </Routes>
 
         {/* <button onClick={fetchData}>Press the Button to Fetch</button> */}
-
-        {/* <footer>
-          <Toolbar disableGutters>
-            <Container
-              maxWidth="xl"
-              // sx={{
-              //   position: "relative",
-              //   backgroundColor: "#4d9699",
-              //   height: "8vh",
-              // }}
-            >
-              <Box
-                sx={{
-                  flexGrow: 1,
-                  display: { xs: "flex", md: "flex" },
-                  // justifyContent: "space-evenly",
-                }}
-              >
-                <Button
-                  size="small"
-                  component={RouterLink}
-                  to="/about"
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                    fontFamily: "Noto sans",
-                  }}
-                >
-                  About
-                </Button>
-                <Button
-                  size="small"
-                  component={RouterLink}
-                  to="/contact"
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                    fontFamily: "Noto sans",
-                  }}
-                >
-                  Contact
-                </Button>
-                <Button
-                  size="small"
-                  component={RouterLink}
-                  to="/privacyPolicy"
-                  onClick={handleCloseNavMenu}
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                    fontFamily: "Noto sans",
-                  }}
-                >
-                  Privacy Policy
-                </Button>
-                <Button
-                  size="small"
-                  disableFocusRipple
-                  disableElevation
-                  sx={{
-                    my: 2,
-                    color: "white",
-                    display: "block",
-                    fontFamily: "Noto sans",
-                    cursor: "default",
-                  }}
-                >
-                  © Priorities 2022
-                </Button>
-              </Box>
-            </Container>
-          </Toolbar>
-        </footer> */}
+        <Footer />
       </div>
     </Router>
   );
