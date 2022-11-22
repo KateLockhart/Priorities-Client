@@ -107,17 +107,30 @@ export const Footer = () => {
           <BottomNavigationAction
             label="Matrix"
             value="matrix"
-            icon={<Dataset />}
+            icon={<Dataset fontSize="large" sx={{ color: "white" }} />}
+            sx={{
+              ":focus": { color: "white" },
+              ":selected": { color: "white" },
+            }}
           />
           <BottomNavigationAction
             label="Add Priority"
             value="priority"
-            icon={<AddBox />}
+            icon={<AddBox fontSize="large" sx={{ color: "white" }} />}
+            sx={{
+              ":focus": { color: "white" },
+              ":selected": { color: "white" },
+            }}
           />
           <BottomNavigationAction
             label="Etc."
             value="etc"
-            icon={<MoreHoriz />}
+            icon={<MoreHoriz fontSize="large" sx={{ color: "white" }} />}
+            selected="white"
+            sx={{
+              ":focus": { color: "white" },
+              ":selected": { color: "white" },
+            }}
           />
         </BottomNavigation>
       </Toolbar>
