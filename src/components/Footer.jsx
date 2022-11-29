@@ -33,6 +33,7 @@ export const Footer = (props) => {
   const [value, setValue] = useState("");
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+  let bottomNav;
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -42,6 +43,150 @@ export const Footer = (props) => {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const guestBottomNav = () => {
+    return (
+      <BottomNavigation
+        sx={{
+          display: { xs: "flex", sm: "none", md: "none" },
+          width: "100%",
+          backgroundColor: "#4d9699",
+          flexDirection: "space-evenly",
+          ":selected": { color: "white" },
+        }}
+        value={value}
+        onChange={handleChange}
+      >
+        <BottomNavigationAction value="" icon="" />
+        <BottomNavigationAction value="" icon="" />
+        <BottomNavigationAction
+          label="Etc."
+          value="etc"
+          aria-controls={open ? "menu-bottombar" : undefined}
+          icon={<MoreHoriz fontSize="large" sx={{ color: "white" }} />}
+          selected="white"
+          sx={{
+            ":focus": { color: "white" },
+            ":selected": { color: "white" },
+          }}
+          onClick={handleClick}
+        />
+        <BottomMenu
+          id="menu-bottombar"
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          {routes.map((l) => {
+            return (
+              <MenuItem
+                component={RouterLink}
+                to={l.route}
+                onClick={handleClose}
+              >
+                <Typography textAlign="center">{l.label}</Typography>
+              </MenuItem>
+            );
+          })}
+        </BottomMenu>
+      </BottomNavigation>
+    );
+  };
+
+  const userBottomNav = () => {
+    return (
+      <BottomNavigation
+        sx={{
+          display: { xs: "flex", sm: "none", md: "none" },
+          width: "100%",
+          backgroundColor: "#4d9699",
+          flexDirection: "space-evenly",
+          ":selected": { color: "white" },
+        }}
+        value={value}
+        onChange={handleChange}
+      >
+        <BottomNavigationAction
+          label="Matrix"
+          value="matrix"
+          icon={<GridView fontSize="large" sx={{ color: "white" }} />}
+          sx={{
+            ":focus": { color: "white" },
+            ":selected": { color: "white" },
+          }}
+          component={RouterLink}
+          to="/matrix"
+        />
+        <BottomNavigationAction
+          label="Add Priority"
+          value="priority"
+          id="menu-action"
+          aria-controls="menu-bottombar"
+          icon={<AddBox fontSize="large" sx={{ color: "white" }} />}
+          sx={{
+            ":focus": { color: "white" },
+            ":selected": { color: "white" },
+          }}
+          component={RouterLink}
+          to="/createPriority"
+        />
+        <BottomNavigationAction
+          label="Etc."
+          value="etc"
+          aria-controls={open ? "menu-bottombar" : undefined}
+          icon={<MoreHoriz fontSize="large" sx={{ color: "white" }} />}
+          selected="white"
+          sx={{
+            ":focus": { color: "white" },
+            ":selected": { color: "white" },
+          }}
+          onClick={handleClick}
+        />
+        <BottomMenu
+          id="menu-bottombar"
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          keepMounted
+          transformOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          anchorEl={anchorEl}
+          open={open}
+          onClose={handleClose}
+        >
+          {routes.map((l) => {
+            return (
+              <MenuItem
+                component={RouterLink}
+                to={l.route}
+                onClick={handleClose}
+              >
+                <Typography textAlign="center">{l.label}</Typography>
+              </MenuItem>
+            );
+          })}
+        </BottomMenu>
+      </BottomNavigation>
+    );
+  };
+
+  if (props.loginStatus) {
+    bottomNav = userBottomNav();
+  } else {
+    bottomNav = guestBottomNav();
+  }
 
   return (
     // App bar replaced with BottomBar? Bottom bar be Toolbar on med+ and icons on sm & xs
@@ -93,82 +238,7 @@ export const Footer = (props) => {
             © Priorities 2022
           </Button>
         </Box>
-
-        <BottomNavigation
-          sx={{
-            display: { xs: "flex", sm: "none", md: "none" },
-            width: "100%",
-            backgroundColor: "#4d9699",
-            flexDirection: "space-evenly",
-            ":selected": { color: "white" },
-          }}
-          value={value}
-          onChange={handleChange}
-        >
-          <BottomNavigationAction
-            label="Matrix"
-            value="matrix"
-            icon={<GridView fontSize="large" sx={{ color: "white" }} />}
-            sx={{
-              ":focus": { color: "white" },
-              ":selected": { color: "white" },
-            }}
-            component={RouterLink}
-            to="/matrix"
-          />
-          <BottomNavigationAction
-            label="Add Priority"
-            value="priority"
-            id="menu-action"
-            aria-controls="menu-bottombar"
-            icon={<AddBox fontSize="large" sx={{ color: "white" }} />}
-            sx={{
-              ":focus": { color: "white" },
-              ":selected": { color: "white" },
-            }}
-            component={RouterLink}
-            to="/createPriority"
-          />
-          <BottomNavigationAction
-            label="Etc."
-            value="etc"
-            aria-controls={open ? "menu-bottombar" : undefined}
-            icon={<MoreHoriz fontSize="large" sx={{ color: "white" }} />}
-            selected="white"
-            sx={{
-              ":focus": { color: "white" },
-              ":selected": { color: "white" },
-            }}
-            onClick={handleClick}
-          />
-          <BottomMenu
-            id="menu-bottombar"
-            anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "bottom",
-              horizontal: "right",
-            }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-          >
-            {routes.map((l) => {
-              return (
-                <MenuItem
-                  component={RouterLink}
-                  to={l.route}
-                  onClick={handleClose}
-                >
-                  <Typography textAlign="center">{l.label}</Typography>
-                </MenuItem>
-              );
-            })}
-          </BottomMenu>
-        </BottomNavigation>
+        {bottomNav}
       </Toolbar>
     </footer>
   );
