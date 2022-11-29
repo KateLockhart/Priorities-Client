@@ -98,10 +98,9 @@ function getWindowDimensions() {
   };
 }
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   const [open, setOpen] = useState(false);
   const [windowWidth, setWindowWidth] = useState(getWindowDimensions().width);
-  const hasToken = false;
   let topbarLinks;
   let menuLinks;
 
@@ -116,7 +115,7 @@ export const Navbar = () => {
   // console.log(windowWidth);
   // screen <= 600, dropdown hold all links
   // screen > 600, top bar show links
-  if (hasToken) {
+  if (props.loginStatus) {
     if (windowWidth <= 600) {
       menuLinks = [
         routes.matrix,
