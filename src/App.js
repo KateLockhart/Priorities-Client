@@ -20,7 +20,7 @@ import { Footer } from "./components/Footer";
 
 function App() {
   // const [result, setResult] = useState([]);
-
+  let loginStatus = true;
   // const fetchData = async () => {
   //   const res = await fetch("", {
   //     method: "",
@@ -37,7 +37,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar />
+        <Navbar loginStatus={loginStatus} />
         <Routes>
           <Route path="" element={<Home />}></Route>
           <Route path="matrix" element={<Matrix />}></Route>
@@ -51,7 +51,7 @@ function App() {
         </Routes>
 
         {/* <button onClick={fetchData}>Press the Button to Fetch</button> */}
-        <Footer />
+        <Footer loginStatus={loginStatus} />
       </div>
     </Router>
   );

@@ -1,26 +1,16 @@
 import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import {
-  AppBar,
   BottomNavigation,
   BottomNavigationAction,
   Box,
   Button,
-  Container,
-  IconButton,
   Menu as BottomMenu,
   MenuItem,
   Toolbar,
   Typography,
 } from "@mui/material";
-import {
-  Menu as MenuIcon,
-  MoreHoriz,
-  AddBox,
-  AddCircle,
-  Dataset,
-  GridView,
-} from "@mui/icons-material";
+import { MoreHoriz, AddBox, GridView } from "@mui/icons-material";
 
 const routes = [
   {
@@ -38,10 +28,9 @@ const routes = [
 ];
 
 // TODO: User vs public view for site links in mobile view, mobile menu with routing still needs constructed
-export const Footer = () => {
+export const Footer = (props) => {
   // const [open, setOpen] = useState(true);
   const [value, setValue] = useState("");
-  const hasToken = false;
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -119,7 +108,7 @@ export const Footer = () => {
           <BottomNavigationAction
             label="Matrix"
             value="matrix"
-            icon={<Dataset fontSize="large" sx={{ color: "white" }} />}
+            icon={<GridView fontSize="large" sx={{ color: "white" }} />}
             sx={{
               ":focus": { color: "white" },
               ":selected": { color: "white" },
